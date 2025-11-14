@@ -88,7 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setLoading(true);
 
     try {
-      const req = await fetch('/api/magic-solver', {
+      // Usamos la ruta directa de funciones para asegurar que la encuentre
+      const req = await fetch('/.netlify/functions/magic-solver', {
+
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ problem, type: state.type })
