@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Matemágicas con Yuyu ✨</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="star-bg"></div>
+
+    <div id="welcomeOverlay" class="welcome-overlay">
+      <h2>✨ ¡Bienvenida a Matemágicas, Yuyu! ✨</h2>
+      <p>
+        Hola mi amor, soy tu papá Abraham. <br />
+        Hice esta página para ti, para que te ayude con las mates ❤️. <br />
+        Recuerda que te amo mucho. ¡Tú puedes! 🚀
+      </p>
+      <button id="closeWelcomeBtn" class="close-btn">¡Empezar la Magia!</button>
+    </div>
+
+    <main class="container">
+      <div class="glass-card">
+        <header>
+          <h1>✨ Matemágicas ✨</h1>
+          <p>¡Hola Yuyu! ¿Qué vamos a resolver hoy?</p>
+        </header>
+
+        <div class="grid-types">
+          <button class="type-btn active" data-type="algebra">
+            📐 Álgebra
+          </button>
+          <button class="type-btn" data-type="geometry">🔺 Geometría</button>
+          <button class="type-btn" data-type="arithmetic">➕ Aritmética</button>
+          <button class="type-btn" data-type="percentages">
+            📊 Porcentajes
+          </button>
+        </div>
+
+        <div class="input-area">
+          <textarea
+            id="problemInput"
+            placeholder="Escribe aquí tu problema mágico... (Ej: 2x + 5 = 15)"
+          ></textarea>
+        </div>
+
+        <button id="solveBtn" class="magic-btn">
+          <span class="btn-text">¡Lanzar Hechizo! 🪄</span>
+          <div class="loader hidden"></div>
+        </button>
+
+        <div id="resultArea" class="result-box hidden">
+          <div class="scroll-content" id="solutionContent"></div>
+        </div>
+
+        <div class="achievements-bar">
+          <span>🏆 Problemas resueltos: <strong id="score">0</strong></span>
+          <div class="progress-track">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer-text">
+      © 2025 Creado con ❤️ por Abraham Ojeda. Todos los derechos reservados.
+    </footer>
+
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>

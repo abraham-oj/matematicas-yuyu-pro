@@ -1,0 +1,13 @@
+# Dependencias y logs
+node_modules
+npm-debug.log
+
+# Archivos locales de Netlify (caché)
+.netlify
+
+# VARIABLES DE ENTORNO (¡SEGURIDAD CRÍTICA!)
+.env
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db

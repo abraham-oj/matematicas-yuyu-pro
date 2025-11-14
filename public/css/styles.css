@@ -1,0 +1,268 @@
+:root {
+  /* Paleta de colores de Abraham para Yuyu */
+  --color-amethyst: #ab5cf1; /* Tu principal morado */
+  --color-mimi-pink: #efcfe3; /* Tu rosa suave */
+  --color-maize: #fffe85; /* Tu amarillo cálido */
+  --color-light-blue: #b3dee2; /* Tu azul claro */
+
+  /* Nuevas variables basadas en tu paleta */
+  --primary: var(--color-amethyst);
+  --secondary: var(--color-mimi-pink);
+  --accent: var(--color-light-blue); /* Usaremos el azul para acentos */
+  --text-dark: #333;
+  --text-light: #666;
+  --bg-gradient: linear-gradient(
+    135deg,
+    var(--color-amethyst) 0%,
+    var(--color-light-blue) 100%
+  );
+  --glass: rgba(255, 255, 255, 0.85); /* Un poco más opaco para el texto */
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  --card-border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+/* El resto de tu CSS anterior, con estos pequeños ajustes */
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg-gradient); /* Usando tu gradiente */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  color: var(--text-dark); /* Color de texto general */
+}
+
+.glass-card {
+  background: var(--glass);
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+h1 {
+  font-family: "Comic Neue", cursive;
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.type-btn {
+  padding: 0.8rem;
+  border: 2px solid var(--accent); /* Borde con tu azul claro */
+  background: transparent;
+  border-radius: 12px;
+  color: var(--accent);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.type-btn.active,
+.type-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ... el resto de tu CSS ... */
+
+.magic-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  ); /* Gradiente con tu morado y rosa */
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+/* ... demás estilos ... */
+
+/* Nuevo estilo para el mensaje de bienvenida y footer */
+.welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-amethyst) 0%,
+    var(--color-light-blue) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+.welcome-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.welcome-overlay h2 {
+  font-family: "Comic Neue", cursive;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.welcome-overlay p {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+.welcome-overlay .close-btn {
+  background: var(--color-maize);
+  color: var(--text-dark);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.welcome-overlay .close-btn:hover {
+  background: #ffd700;
+}
+
+.footer-text {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  z-index: 5; /* Para que quede encima de las estrellas */
+}
+
+/* Animaciones de estrellas y Y */
+.star-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; /* Detrás de todo el contenido */
+  pointer-events: none;
+}
+.star {
+  position: absolute;
+  background: var(--color-maize);
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle 5s infinite ease-in-out;
+}
+.letter-y {
+  position: absolute;
+  font-family: "Comic Neue", cursive;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  animation: floatY 15s infinite ease-in-out;
+  pointer-events: none;
+  /* Estilo mejorado para el área de texto */
+  .input-area {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Estilo "Pizarra Mágica" para el área de texto */
+  .input-area {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 180px;
+    padding: 1.5rem;
+
+    /* Hacemos que parezca una hoja de papel flotante */
+    background-color: #ffffff;
+    border: 4px dashed var(--color-light-blue); /* Borde punteado como de tarea escolar */
+    border-radius: 25px; /* Bordes muy redondos */
+
+    /* Tipografía divertida y GRANDE */
+    font-family: "Comic Neue", cursive;
+    font-size: 1.8rem; /* Letra gigante para que la vea bien */
+    color: #5d4e7b; /* Color morado oscuro para el texto */
+    line-height: 1.5;
+
+    resize: none;
+    box-shadow: 0 10px 25px rgba(171, 92, 241, 0.15); /* Sombra suave morada */
+    transition: all 0.3s ease;
+  }
+
+  textarea:focus {
+    outline: none;
+    border-color: var(--color-amethyst); /* Cambia a morado al escribir */
+    background-color: #fdf7ff; /* Fondo ligeramente rosado al enfocar */
+    transform: scale(1.02); /* Se agranda un poquito */
+    box-shadow: 0 15px 30px rgba(171, 92, 241, 0.25);
+  }
+
+  textarea::placeholder {
+    color: #b8b8d0;
+    font-size: 1.4rem;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatY {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(10vw, 50vh) rotate(30deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(50vw, 20vh) rotate(60deg);
+    opacity: 0.1;
+  }
+  75% {
+    transform: translate(70vw, 80vh) rotate(90deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(100vw, 0) rotate(120deg);
+    opacity: 0;
+  }
+}
